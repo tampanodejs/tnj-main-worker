@@ -1,2 +1,2 @@
 # tnj-main-worker
-The main worker for the tnj-runners mean-r solution
+This is a node worker designed to work with the Tampa Node.js Runners microservices app
