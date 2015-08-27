@@ -8,8 +8,12 @@ module.exports = {
   index: index
 };
 
+/**
+ * GET /tnj/user
+ * @param message
+ */
 function index(message) {
-  logger.debug('GET /users: ' + JSON.stringify(message.body));
+  logger.debug('GET /tnj/user: ' + JSON.stringify(message.body));
   Users.find(message.body.payload.query_params, function(err, users) {
     if (err) {
       handler.error(err, message);
