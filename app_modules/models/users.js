@@ -4,7 +4,6 @@ var mongoose = require('mongoose');
 var config = require('../config/environment');
 
 var schema = {
-  password: String,
   user_name: String,
   display_name: String,
   last_login: {

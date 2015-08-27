@@ -3,7 +3,6 @@
 var config = require('../../config/environment');
 var logger = global.logger;
 var rabbit = global.rabbit;
-var audit = global.audit;
 
 module.exports = {
   init: init
@@ -22,7 +21,6 @@ function success(data, message) {
     client_request_id: message.body.client_request_id,
     from_worker_name: process.env.APP_NAME
   });
-  audit(data);
   logger.debug(JSON.stringify(data));
 }
 
@@ -33,6 +31,5 @@ function error(err, message) {
     client_request_id: message.body.client_request_id,
     from_worker_name: process.env.APP_NAME
   });
-  audit(err);
   logger.error(JSON.stringify(err));
 }

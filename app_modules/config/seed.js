@@ -6,6 +6,8 @@
 'use strict';
 
 var config = require('../config/environment');
+var Users = require('../models/users');
+
 module.exports = {
   initialize: initialize
 };
@@ -32,7 +34,17 @@ function initialize(environment) {
  * Run when in the development environment.
  */
 function seedDev() {
-
+  Users.find({}).remove(function() {
+    Users.create({
+      user_name: 'tnj-admin',
+      display_name: 'TNJ Admin',
+      last_login: new Date(),
+      enabled: true,
+      oauth_tokens: []
+    }, function () {
+      console.log('Successfully seeded users');
+    });
+  });
 }
 
 /**
