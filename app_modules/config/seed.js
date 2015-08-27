@@ -36,11 +36,11 @@ function initialize(environment) {
 function seedDev() {
   Users.find({}).remove(function() {
     Users.create({
-      user_name: 'tnj-admin',
-      display_name: 'TNJ Admin',
+      user_name: 'enograles',
+      display_name: 'Eric Nograles',
       last_login: new Date(),
       enabled: true,
-      oauth_tokens: []
+      oauth_tokens: [{type: 'runkeeper', token: process.env.RUNKEEPER_SEED_OAUTH}]
     }, function () {
       console.log('Successfully seeded users');
     });
