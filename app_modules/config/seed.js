@@ -34,17 +34,17 @@ function initialize(environment) {
  * Run when in the development environment.
  */
 function seedDev() {
-  Users.find({}).remove(function() {
-    Users.create({
-      user_name: 'enograles',
-      display_name: 'Eric Nograles',
-      last_login: new Date(),
-      enabled: true,
-      oauth_tokens: [{type: 'runkeeper', token: process.env.RUNKEEPER_SEED_OAUTH}]
-    }, function () {
-      console.log('Successfully seeded users');
-    });
-  });
+  //Users.find({}).remove(function() {
+  //  Users.create({
+  //    user_name: 'enograles',
+  //    display_name: 'Eric Nograles',
+  //    last_login: new Date(),
+  //    enabled: true,
+  //    oauth_tokens: [{type: 'runkeeper', token: process.env.RUNKEEPER_SEED_OAUTH}]
+  //  }, function () {
+  //    console.log('Successfully seeded users');
+  //  });
+  //});
 }
 
 /**
